@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Select items="{/cities}">
+        <core:Item key="{name}" text="{otherName}"></core:Item>
+        </Select>
+        <ComboBox items="{/cities}">
+          <core:Item key="{name}" text="{otherName}"></core:Item>
+        </ComboBox>
+        <MultiComboBox items="{/cities}">
+          <core:Item key="{name}" text="{otherName}"></core:Item>
+        </MultiComboBox>
+</core:FragmentDefinition>

@@ -1,0 +1,34 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="class9.controller.View2">
+<Page id="p2" title="Detail Page" showNavButton="true" navButtonPress="onBack">
+<content>
+    <!-- <Text text="{name}"></Text> -->
+    <ObjectHeader title="{NAME}" intro="{DESCRIPTION}" number="{PRICE}" numberUnit="{CURRENCY_CODE}" icon="{imageURL}"></ObjectHeader>
+<IconTabBar>
+    <items>
+        <IconTabFilter count="1" key="1" text="1st" icon="sap-icon://home">
+          <core:Fragment fragmentName="class9.fragments.Tab1" type="XML">
+
+          </core:Fragment>   
+        </IconTabFilter>
+        <IconTabFilter count="2" key="2" text="2nd" icon="sap-icon://table-view">
+          <core:Fragment fragmentName="class9.fragments.Tab2" type="XML">
+              
+          </core:Fragment>
+        </IconTabFilter>
+        <IconTabFilter  count="3" key="3" text="3rd" icon="sap-icon://display-more">
+            <core:Fragment fragmentName="class9.fragments.Tab3" type="XML">
+              
+            </core:Fragment>
+        </IconTabFilter>
+    </items>
+</IconTabBar>
+</content>
+<footer>
+    <Toolbar>
+        <ToolbarSpacer/>
+            <Button text="Save" press="onSave" type="Accept"/>
+            <Button text="Cancel" press="onCancel" type="Reject" />
+    </Toolbar>
+</footer>
+</Page>
+</mvc:View>

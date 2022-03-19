@@ -1,0 +1,101 @@
+{
+    "version": "1.37.0",
+    "sap.app":{
+        "id": "class9",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": "1.0.0",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "dataSources":{
+            "class9Service": {
+                "uri": "/sap/opu/odata/sap/ZHPL_SM_ODATA_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+
+                }
+        }
+    }
+    },
+    "sap.ui":{
+          "technology": "UI5",
+          "deviceTypes": ["desktop","mobile","tablet"],
+          "fullWidth": true
+    },
+    "sap.ui5":{
+        "dependencies": { 
+            "minUI5Version": "1.90.0",
+            "libs":{
+                "sap.m":{},
+                "sap.ui.layout": {}
+            }
+        },
+    "rootView":{
+        "viewName": "class9.view.App",
+        "type": "XML"
+    },
+    "routing": {
+        "config": {
+            "routerClass": "sap.m.routing.Router",
+            "viewType": "XML",
+            "viewPath": "class9.view",
+            "controlId": "idAppCon"
+       },
+        "routes": [{
+            "pattern": "",
+            "name": "appHome1",
+            "target": ["master", "empty"]
+        },
+        {
+            "pattern": "fruits/{fruitId}",
+            "name": "appHome2",
+            "target": ["master", "detail"]
+        },
+        {
+            "pattern": "addNewProduct",
+            "name": "addNew",
+            "target": ["master", "add"]
+        }],
+        "targets": {
+            "master": {
+                "viewId": "idView1",
+                "viewName": "View1",
+                "controlAggregation":"masterPages"
+             },
+             "detail": {
+                "viewId": "idView2",
+                "viewName": "View2",
+                "controlAggregation":"detailPages"
+             },
+             "empty": {
+                "viewId": "idEmpty",
+                "viewName": "Empty",
+                "controlAggregation":"detailPages"
+             },
+             "add": {
+                "viewId": "idadd",
+                "viewName": "add",
+                "controlAggregation":"detailPages"
+             }
+        }
+    },
+    "models": {
+        "":{
+            "type": "sap.ui.model.odata.v2.ODataModel",
+            "dataSource": "class9Service"
+        },
+        "local": {
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "model/fruits.json",
+            "settings": {
+
+            }
+            },
+        "i18n": {
+            "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+                }
+    }
+}
+}

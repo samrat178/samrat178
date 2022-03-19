@@ -1,0 +1,54 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="class9.controller.View1">
+    <Page title="Summary">
+    <headerContent>
+        <Button icon="sap-icon://action" tooltip="Go to Next view" press="onSecond"/>
+        
+    </headerContent>
+    <content>
+        <SearchField width="30%" search="onSearch"></SearchField>
+        <!-- <List id="l1" items="{path: '/fruits', sorter: {path: 'name'}}" mode="SingleSelectMaster" delete="onDelete" selectionChange="onSelect"> -->
+            <List id="l1" items="{path: '/ProductSet'}" mode="SingleSelectMaster" delete="onDelete" selectionChange="onSelect">
+            <items press="onPress">
+                <!-- <DisplayListItem label="APPLE" value="Good for health"></DisplayListItem>
+                <StandardListItem icon="https://www.mashed.com/img/gallery/heres-what-happens-when-you-eat-a-banana-every-day/intro-1596497583.jpg" description="Descrition" title="Title"></StandardListItem>
+                <InputListItem>
+                    <HBox>
+                            <Text class="sapUiTinyMarginTop" text="How are you?"></Text>
+                            <Input></Input>
+                    </HBox>
+                </InputListItem>
+                <ObjectListItem title="Mango" icon="https://5.imimg.com/data5/SELLER/Default/2021/5/GH/WC/ZY/127199812/fresh-mango-fruits-500x500.jpg" number="Rs.50" numberUnit="per kg."></ObjectListItem>
+            <CustomListItem>
+                <VBox>
+                    <HBox>
+                        <Switch text="Cnfirm ?"></Switch>
+                        <Button text="Payment"></Button>
+                    </HBox>
+                </VBox>
+                <VBox>
+                    <HBox>
+                        <Switch text="Cnfirm ?"></Switch>
+                        <Button text="Payment"></Button>
+                    </HBox>
+                </VBox>
+            </CustomListItem>
+            <FeedListItem icon="https://www.fintechfutures.com/files/2020/12/SAP-logo-1024x1024.jpg" sender="SAP" text="WIP for ticket no.2546">
+            </FeedListItem>
+            <ActionListItem text="Order Now"></ActionListItem> -->
+            <ObjectListItem title="{PRODUCT_ID}" icon="{imageURL}" intro="{CATEGORY}" number="{PRICE}" numberUnit="{CURRENCY_CODE}">
+
+            </ObjectListItem>
+
+            </items>
+        </List>
+    </content>
+    <footer>
+     <Toolbar>
+       <ToolbarSpacer/>
+       <Button icon="sap-icon://add" text="Add Product" press="onAdd">
+         
+       </Button>
+     </Toolbar>
+    </footer>
+</Page>
+</mvc:View>

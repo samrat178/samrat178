@@ -1,0 +1,13 @@
+specVersion: '2.6'
+metadata:
+  name: class9
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: true,
+        backend:
+        - path: /sap
+          url: http://s4xhplapp.hpl.co.in:8000/
